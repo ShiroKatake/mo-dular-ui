@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "test": "echo core",
-    "build": "rm -rf dist && mkdir dist && cd components && tsc --module commonjs && cp -r ./package.json ../dist"
+    "build": "rm -rf dist && mkdir dist && cd src && tsc --module commonjs && cp -r ./package.json ../dist"
   },
   "dependencies": {
   },
