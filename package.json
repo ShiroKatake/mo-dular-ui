@@ -27,6 +27,10 @@
     "@storybook/nextjs": "7.0.18",
     "@storybook/react": "7.0.18",
     "@storybook/testing-library": "0.0.14-next.2",
+    "lerna": "^6.6.2",
     "storybook": "7.0.18"
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }
