@@ -1,9 +1,9 @@
 {
-  "name": "@modular-ui/core",
+  "name": "@modular-ui/styled",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "test": "echo core",
+    "test": "echo styled",
     "build": "rm -rf dist && mkdir dist && cd src && tsc --module commonjs && cp -r ./package.json ../dist"
   },
   "dependencies": {
