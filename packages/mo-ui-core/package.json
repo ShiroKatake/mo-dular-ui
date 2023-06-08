@@ -1,0 +1,13 @@
+{
+  "name": "@modular-ui/core",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "echo core",
+    "build": "rm -rf dist && mkdir dist && cd components && tsc --module commonjs && cp -r ./package.json ../dist"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}

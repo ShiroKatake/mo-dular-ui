@@ -1,0 +1,13 @@
+{
+  "name": "@modular-ui/base",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "echo base",
+    "build": "rm -rf dist && mkdir dist && cd components && tsc --module commonjs && cp -r ./package.json ../dist"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
