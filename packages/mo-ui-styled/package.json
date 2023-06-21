@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "test": "echo styled",
-    "build": "rm -rf dist && mkdir dist && cd src && tsc --module commonjs && cp -r ./package.json ../dist"
+    "build": "rm -rf dist && mkdir dist && cd src && tsc --module commonjs && cd .. && cp ./package.json ./dist"
   },
   "peerDependencies": {
     "react": "^18.0.0",
