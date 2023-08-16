@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "test": "echo styled",
     "build": "rm -rf dist && mkdir dist && cd src && tsc --module commonjs && cd .. && cp ./package.json ./dist"
   },
   "peerDependencies": {

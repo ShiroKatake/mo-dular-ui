@@ -1,0 +1,29 @@
+{
+  "extends": [
+    "plugin:storybook/recommended",
+    "next",
+    "next/core-web-vitals",
+    "eslint:recommended"
+  ],
+  "globals": {
+    // this line tells eslint it doesn't have to warn us
+    // about not importing React for every component file
+    "React": "readonly"
+  },
+  "ignorePatterns": [
+    "**/dist",
+    "**/*.stories.tsx",
+    "**/*.stories.ts"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.stories.@(ts|tsx|js|jsx|mjs|cjs)"
+      ],
+      "rules": {
+        // example of overriding a rule
+        "storybook/hierarchy-separator": "error"
+      }
+    }
+  ]
+}
