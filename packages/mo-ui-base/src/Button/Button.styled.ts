@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const ButtonResetStyled = styled.button`
   all: unset;
   cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 `;
 
 const SpanReset = styled.span`
