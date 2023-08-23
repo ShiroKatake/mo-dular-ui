@@ -10,20 +10,34 @@
     // about not importing React for every component file
     "React": "readonly"
   },
-  "ignorePatterns": [
-    "**/dist",
-    "**/*.stories.tsx",
-    "**/*.stories.ts"
-  ],
+  "ignorePatterns": ["**/dist", "**/*.stories.tsx", "**/*.stories.ts"],
   "overrides": [
     {
-      "files": [
-        "*.stories.@(ts|tsx|js|jsx|mjs|cjs)"
-      ],
+      "files": ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
       "rules": {
         // example of overriding a rule
         "storybook/hierarchy-separator": "error"
       }
+    },
+    {
+      "files": ["*.types.ts"],
+      "rules": {
+        "no-unused-vars": [
+          "warn",
+          {
+            "args": "none"
+          }
+        ]
+      }
     }
-  ]
+  ],
+  "rules": {
+    "no-unused-vars": [
+      1,
+      {
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  }
 }
