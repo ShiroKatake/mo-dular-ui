@@ -5,6 +5,9 @@
   "scripts": {
     "build": "rm -rf dist && mkdir dist && cd src && tsc --module commonjs && cd .. && cp ./package.json ./dist"
   },
+  "dependencies": {
+    "@modular-ui/base": "^0.1.0"
+  },
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
