@@ -4,9 +4,6 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "incremental": false,
-    "paths": {
-      "@modular-ui/base": ["./packages/mo-ui-base/src"],
-    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "**/*.stories.tsx", "./dist"]
