@@ -6,6 +6,7 @@
       "esnext"
     ],
     "allowJs": true,
+    "baseUrl": "./",
     "skipLibCheck": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true,
@@ -16,14 +17,14 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "paths": {
+      "@modular-ui/base/*": ["./packages/mo-ui-base/src/*"],
+      "@modular-ui/base": ["./packages/mo-ui-base/src/"],
+      "@modular-ui/styled/*": ["./packages/mo-ui-styled/src/*"],
+      "@modular-ui/styled": ["./packages/mo-ui-styled/src/"]
+    }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

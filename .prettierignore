@@ -1,4 +1,8 @@
 .yarn
 .next
-dist
-node_modules
+**/dist
+**/node_modules
+**/tsconfig.json
+**/.eslintrc.json
+**/package.json
+**/.vscode

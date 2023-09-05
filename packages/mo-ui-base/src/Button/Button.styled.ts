@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ButtonResetStyled = styled.button`
   all: unset;
@@ -13,11 +13,8 @@ const SpanReset = styled.span`
   all: unset;
 `;
 
-export const SpanStartIcon = styled(SpanReset)`
-`;
+export const SpanStartIcon = styled(SpanReset)``;
 
-export const SpanContent = styled(SpanReset)`
-`;
+export const SpanContent = styled(SpanReset)``;
 
-export const SpanEndIcon = styled(SpanReset)`
-`;
+export const SpanEndIcon = styled(SpanReset)``;
