@@ -14,30 +14,14 @@
   "overrides": [
     {
       "files": ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
-      "rules": {
-        // example of overriding a rule
-        "storybook/hierarchy-separator": "error"
-      }
+      "rules": { "storybook/hierarchy-separator": "error" }
     },
     {
-      "files": ["*.types.ts"],
-      "rules": {
-        "no-unused-vars": [
-          "warn",
-          {
-            "args": "none"
-          }
-        ]
-      }
+      "files": ["**/*.types.ts", "**/*.d.ts"],
+      "rules": { "no-unused-vars": "off" }
     }
   ],
   "rules": {
-    "no-unused-vars": [
-      1,
-      {
-        "args": "after-used",
-        "argsIgnorePattern": "^_"
-      }
-    ]
+    "no-unused-vars": ["warn", { "varsIgnorePattern": "^_" }]
   }
 }
