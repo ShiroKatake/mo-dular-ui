@@ -1,10 +1,6 @@
 {
   "extends": "../../tsconfig.settings.json",
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
     "incremental": false,
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "**/*.stories.tsx", "./dist"]
+  }
 }

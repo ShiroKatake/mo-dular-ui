@@ -18,6 +18,7 @@
     "incremental": true,
     "noErrorTruncation": true,
     "baseUrl": "./",
+    "outDir": "./dist",
     "paths": {
       "@modular-ui/base/*": ["./packages/mo-ui-base/src/*"],
       "@modular-ui/base": ["./packages/mo-ui-base/src/"],
@@ -26,5 +27,5 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "**/*.stories.tsx", "./dist"]
 }
