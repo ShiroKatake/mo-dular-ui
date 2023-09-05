@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { Overpass } from 'next/font/google';
 import React from 'react';
 import { Heading } from './Heading';
-import { Recommended } from './examples/Recommended/component/Recommended';
+import { StyledHeading } from './examples/SAPC/component/SAPCHeading.styled';
 
 const meta: Meta<typeof Heading> = {
-  title: 'Form Control/Button',
+  title: 'Heading',
   component: Heading,
   parameters: {
     layout: 'centered',
@@ -29,12 +30,6 @@ const meta: Meta<typeof Heading> = {
         type: { summary: 'React.ReactNode' },
       },
     },
-    dynamicHeadingStyle: {
-      description: 'Children components',
-      table: {
-        type: { summary: '(level: number) => CSS_Rules' },
-      },
-    },
   },
   args: {
     level: 1,
@@ -47,8 +42,9 @@ export default meta;
 
 type Story = StoryObj<typeof Heading>;
 
+const overpass = Overpass({ subsets: ['latin'] });
 export const Styled: Story = {
-  render: (args) => <Recommended {...args} />,
+  render: (args) => <StyledHeading {...args} className={overpass.className} />,
   args: {
     level: 1,
     fakeHeading: false,

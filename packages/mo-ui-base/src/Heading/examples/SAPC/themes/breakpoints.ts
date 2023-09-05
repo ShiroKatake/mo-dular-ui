@@ -7,9 +7,6 @@ export const breakpoints = {
   xl: '1600px',
 };
 
-// A number version of the above 'breakpoints' constant. This can be used
-// whenever we need to refer to a breakpoint value as a number instead of a
-// string.
 export const intBreakpoints = {
   xxs: 320,
   xs: 480,
