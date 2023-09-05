@@ -18,8 +18,11 @@
     "incremental": true,
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./*"]
-    },
+      "@modular-ui/base/*": ["./packages/mo-ui-base/src/*"],
+      "@modular-ui/base": ["./packages/mo-ui-base/src/"],
+      "@modular-ui/styled/*": ["./packages/mo-ui-styled/src/*"],
+      "@modular-ui/styled": ["./packages/mo-ui-styled/src/"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
