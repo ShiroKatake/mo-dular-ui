@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { StyledHeadingProps } from './Heading.types';
 
-export const StyledHeading = styled.h1<StyledHeadingProps>`
+export const StyledHeading = styled.h1`
   all: unset;
-  ${(props) => props.$dynamicHeadingStyle?.(props.$styledLevel)}
+  display: block;
 `;
