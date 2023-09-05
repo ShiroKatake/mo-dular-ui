@@ -16,6 +16,7 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+    "noErrorTruncation": true,
     "baseUrl": "./",
     "paths": {
       "@modular-ui/base/*": ["./packages/mo-ui-base/src/*"],
