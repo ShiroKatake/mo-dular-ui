@@ -1,18 +1,12 @@
-import { ButtonResetStyled, SpanContent, SpanEndIcon, SpanStartIcon } from "./Button.styled";
-import { ButtonProps } from "./Button.types";
+import { ButtonResetStyled, IconAfter, IconBefore, SpanContent } from './Button.styled';
+import { ButtonProps } from './Button.types';
 
-export const Button: React.FC<ButtonProps> = ({
-  tabIndex,
-  children,
-  startIcon,
-  endIcon,
-  ...otherProps
-}) => {
+export const Button: React.FC<ButtonProps> = ({ tabIndex, children, iconBefore, iconAfter, ...otherProps }) => {
   return (
     <ButtonResetStyled tabIndex={tabIndex} {...otherProps}>
-      {startIcon && <SpanStartIcon>{startIcon}</SpanStartIcon>}
+      {iconBefore && <IconBefore>{iconBefore}</IconBefore>}
       <SpanContent>{children}</SpanContent>
-      {endIcon && <SpanEndIcon>{endIcon}</SpanEndIcon>}
+      {iconAfter && <IconAfter>{iconAfter}</IconAfter>}
     </ButtonResetStyled>
   );
-}
+};
