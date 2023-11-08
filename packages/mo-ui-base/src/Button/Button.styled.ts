@@ -9,12 +9,12 @@ export const ButtonResetStyled = styled.button`
   }
 `;
 
-const SpanReset = styled.span`
+export const IconBefore = styled.span`
   all: unset;
 `;
-
-export const SpanStartIcon = styled(SpanReset)``;
-
-export const SpanContent = styled(SpanReset)``;
-
-export const SpanEndIcon = styled(SpanReset)``;
+export const SpanContent = styled.span`
+  all: unset;
+`;
+export const IconAfter = styled.span`
+  all: unset;
+`;
