@@ -1,7 +1,7 @@
 type BaseButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export interface ButtonProps extends BaseButtonProps {
+export type ButtonProps = BaseButtonProps & {
   children: React.ReactNode;
   iconBefore?: React.ReactElement<typeof SVGElement>;
   iconAfter?: React.ReactElement<typeof SVGElement>;
-}
+};
