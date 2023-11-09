@@ -3,8 +3,15 @@ import { NavA, NavLi } from '../NavMenu.styled';
 import { NavItemProps, isLinkWithSubLinks } from '../NavMenu.types';
 import { NavItemList } from './NavItemList';
 
-export const NavItem: React.FC<NavItemProps> = (props) => {
-  const { href, text, index, setOpenDropdown, openDropdown } = props;
+export const NavItem: React.FC<NavItemProps> = ({
+  href,
+  text,
+  index,
+  setOpenDropdown,
+  openDropdown,
+  noBehaviour,
+  ...otherProps
+}) => {
   const isExpanded = openDropdown === index;
 
   const handleKeyDown = (event: any, index: number) => {
@@ -15,37 +22,40 @@ export const NavItem: React.FC<NavItemProps> = (props) => {
 
   const handleBlur = (event: any) => {
     const relatedTarget = event.relatedTarget;
-    if (event.currentTarget instanceof Node && !event.currentTarget.contains(relatedTarget)) {
+    if (event.relatedTarget instanceof Node && !event.currentTarget.contains(relatedTarget)) {
       setOpenDropdown(null);
     }
+  };
+
+  const handleMouseEnter = (event: any, index: number) => {
+    setOpenDropdown(index);
   };
 
   const handleMouseLeave = (event: any) => {
     const relatedTarget = event.relatedTarget;
-    if (event.target instanceof Node && !event.target.contains(relatedTarget)) {
+    if (event.relatedTarget instanceof Node && !event.target.contains(relatedTarget)) {
       setOpenDropdown(null);
     }
   };
 
+  const navLiProps = noBehaviour
+    ? {}
+    : {
+        onKeyDown: (event: any) => handleKeyDown(event, index),
+        onBlur: (event: any) => handleBlur(event),
+        onMouseEnter: (event: any) => handleMouseEnter(event, index),
+        onMouseLeave: (event: any) => handleMouseLeave(event),
+        ...(isLinkWithSubLinks(otherProps) && { 'aria-expanded': isExpanded }),
+        $isExpanded: isExpanded,
+      };
+
   return (
-    <NavLi
-      onKeyDown={(event) => handleKeyDown(event, index)}
-      onBlur={(event) => handleBlur(event)}
-      onMouseEnter={() => setOpenDropdown(index)}
-      onMouseLeave={(event) => handleMouseLeave(event)}
-      key={text}
-    >
-      <NavA
-        tabIndex={0}
-        href={href || '#'}
-        // Dynamic attribute assignments
-        {...(!href && { as: 'span' })}
-        {...(isLinkWithSubLinks(props) && { 'aria-expanded': isExpanded })}
-      >
+    <NavLi key={text} {...navLiProps}>
+      <NavA tabIndex={0} href={href || ''} {...(!href && { as: 'span' })}>
         {text}
       </NavA>
       {/* Recurring render if there are sublinks in sublinks */}
-      {isLinkWithSubLinks(props) && isExpanded && <NavItemList navLinks={props.sublinks} />}
+      {isLinkWithSubLinks(otherProps) && <NavItemList noBehaviour={noBehaviour} navLinks={otherProps.sublinks} />}
     </NavLi>
   );
 };

@@ -13,6 +13,7 @@ import { NavItemList } from './subcomponents/NavItemList';
  * @param navLinks    - The array of navigation links to render.
  */
 export const NavMenu: React.FC<NavMenuProps> = ({
+  noBehaviour,
   className,
   isVisible,
   slotBefore,
@@ -22,9 +23,9 @@ export const NavMenu: React.FC<NavMenuProps> = ({
   const navRef = useRef<HTMLUListElement>(null);
 
   return (
-    <Nav ref={navRef} className={className} $isVisible={isVisible}>
+    <Nav ref={navRef} className={className} $isExpanded={isVisible}>
       {slotBefore}
-      <NavItemList navLinks={navLinks} />
+      <NavItemList noBehaviour={noBehaviour} navLinks={navLinks} />
       {slotAfter}
     </Nav>
   );

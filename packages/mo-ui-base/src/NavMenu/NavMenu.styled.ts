@@ -5,9 +5,16 @@ export const NavUl = styled.ul`
   all: unset;
 `;
 
-export const NavLi = styled.li`
+type NavLiStyledProps = {
+  $isExpanded?: boolean;
+};
+
+export const NavLi = styled.li<NavLiStyledProps>`
   all: unset;
   cursor: pointer;
+  ${NavUl} {
+    display: ${({ $isExpanded = true }) => !$isExpanded && 'none'};
+  }
 `;
 
 export const NavA = styled(Link)`
@@ -15,10 +22,10 @@ export const NavA = styled(Link)`
 `;
 
 type NavMenuStyledProps = {
-  $isVisible?: boolean;
+  $isExpanded?: boolean;
 };
 
 export const Nav = styled.nav<NavMenuStyledProps>`
   all: unset;
-  display: ${({ $isVisible: $isExpanded }) => !$isExpanded && 'none'};
+  display: ${({ $isExpanded }) => !$isExpanded && 'none'};
 `;

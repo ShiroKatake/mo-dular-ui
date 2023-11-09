@@ -16,12 +16,14 @@ export const isLinkWithSubLinks = (link: any): link is NavLinkWithSubLinks => {
 };
 
 export type NavItemProps = NavLink & {
+  noBehaviour?: boolean;
   index: number;
   openDropdown: number | null;
   setOpenDropdown: React.Dispatch<React.SetStateAction<number | null>>;
 };
 
 export type NavItemListProps = {
+  noBehaviour?: boolean;
   ref?: React.Ref<HTMLUListElement>;
   navLinks: NavLink[];
 };
